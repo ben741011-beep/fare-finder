@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Plane, Bell, Bird } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Reveal } from "@/components/Reveal";
 
@@ -26,19 +27,19 @@ export const Route = createFileRoute("/")({
 
 const features = [
   {
-    icon: "✈️",
+    icon: Plane,
     title: "盯緊熱門航線",
     subtitle: "Always-on route watching",
     body: "持續監控台北出發的熱門航線（東京、首爾），自動抓最低票價。",
   },
   {
-    icon: "🔔",
+    icon: Bell,
     title: "達標自動通知",
     subtitle: "Target-price email alerts",
     body: "低於你設定的目標價，就寄 email 提醒你，附上立即訂購連結。",
   },
   {
-    icon: "🕊️",
+    icon: Bird,
     title: "隨時取消",
     subtitle: "Cancel anytime",
     body: "月訂閱制，不想用隨時停，沒有綁約。",
@@ -93,9 +94,7 @@ function Landing() {
           {features.map((f, i) => (
             <Reveal key={f.title} delay={i * 120}>
               <article className="h-full rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/40">
-                <div className="text-3xl" aria-hidden>
-                  {f.icon}
-                </div>
+                <f.icon className="size-8 text-primary" aria-hidden strokeWidth={1.75} />
                 <h3 className="mt-4 text-lg font-semibold text-card-foreground">
                   {f.title}
                 </h3>
