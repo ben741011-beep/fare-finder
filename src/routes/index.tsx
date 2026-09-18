@@ -26,60 +26,64 @@ const features = [
 
 export function Landing() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="coast-page min-h-screen bg-background">
       <SiteHeader />
 
       {/* Hero */}
-      <section className="hero-glow relative overflow-hidden">
-        <div className="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 sm:py-36">
-          <Reveal>
-            <p className="mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
-              機票降價通知
-            </p>
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl">
-              Flight Price <span className="text-primary">Notifier</span>
-            </h1>
-          </Reveal>
+      <section className="coast-hero relative overflow-hidden">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 pb-20 pt-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:pb-28 lg:pt-20">
+          <div className="relative z-10 min-w-0 max-w-xl">
+            <Reveal>
+              <p className="coast-eyebrow mb-7 inline-flex items-center gap-3 text-sm font-medium tracking-[0.22em] text-primary">
+                <span className="coast-eyebrow-line" aria-hidden="true" />
+                機票降價通知
+              </p>
+              <h1 className="coast-display text-4xl leading-[1.05] tracking-tight sm:text-6xl xl:text-7xl">
+                Flight Price <span className="text-primary">Notifier</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={120}>
+              <p className="mt-9 max-w-lg text-xl font-semibold leading-relaxed text-foreground sm:text-2xl">
+                設定航線與目標價，機票降價就通知你
+              </p>
+              <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Set a route and a target price — we email you when the fare drops.
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <div className="mt-10">
+                <Link
+                  to="/sign-in"
+                  className="coast-button inline-flex items-center justify-center rounded-full bg-primary px-9 py-4 text-base font-semibold text-primary-foreground transition-all hover:brightness-110 card-glow"
+                >
+                  Sign in / 登入
+                </Link>
+              </div>
+            </Reveal>
+          </div>
           <Reveal delay={120}>
-            <p className="mt-6 text-xl font-semibold text-foreground sm:text-2xl">
-              設定航線與目標價，機票降價就通知你
-            </p>
-            <p className="mt-3 text-base text-muted-foreground sm:text-lg">
-              Set a route and a target price — we email you when the fare drops.
-            </p>
-          </Reveal>
-          <Reveal delay={240}>
-            <div className="mt-10">
-              <Link
-                to="/sign-in"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-3.5 text-base font-semibold text-primary-foreground transition-all hover:brightness-110 card-glow"
-              >
-                Sign in / 登入
-              </Link>
+            <div className="coast-photo-frame" aria-hidden="true">
+              <img src="/sunset-coast.png" alt="" className="coast-photo" fetchPriority="high" />
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* Features */}
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <section className="coast-features mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:py-24">
         <Reveal>
-          <h2 className="text-center text-3xl font-bold tracking-tight">
+          <h2 className="coast-display text-center text-3xl tracking-tight sm:text-4xl">
             為什麼選擇 Flight Price Notifier
           </h2>
         </Reveal>
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-3">
           {features.map((f, i) => (
             <Reveal key={f.title} delay={i * 120}>
-              <article className="h-full rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/40">
+              <article className="coast-feature-card h-full rounded-2xl border border-border bg-card p-7 transition-colors hover:border-primary/40">
                 <f.icon className="size-8 text-primary" aria-hidden strokeWidth={1.75} />
-                <h3 className="mt-4 text-lg font-semibold text-card-foreground">
-                  {f.title}
-                </h3>
+                <h3 className="mt-4 text-lg font-semibold text-card-foreground">{f.title}</h3>
                 <p className="text-sm font-medium text-primary">{f.subtitle}</p>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {f.body}
-                </p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
               </article>
             </Reveal>
           ))}
@@ -87,7 +91,7 @@ export function Landing() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border">
+      <footer className="coast-footer border-t border-border">
         <div className="mx-auto max-w-6xl px-4 py-8 text-center text-sm text-muted-foreground sm:px-6">
           © 2026 Flight Price Notifier
         </div>

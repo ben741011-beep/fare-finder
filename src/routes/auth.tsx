@@ -34,15 +34,15 @@ export function AuthPage({ mode }: { mode: "signin" | "signup" }) {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-background hero-glow">
-      <header className="mx-auto flex h-16 w-full max-w-6xl items-center px-4 sm:px-6">
-        <Link to="/" className="text-lg font-bold tracking-tight">
+    <div className="coast-auth flex min-h-screen flex-col bg-background">
+      <header className="mx-auto flex h-20 w-full max-w-7xl items-center px-4 sm:px-6">
+        <Link to="/" className="coast-wordmark text-lg font-bold tracking-tight">
           Flight Price <span className="text-primary">Notifier</span>
         </Link>
       </header>
 
       <main className="flex flex-1 items-center justify-center px-4 py-12">
-        <div className="w-full max-w-md rounded-2xl border border-border bg-card p-8 shadow-xl">
+        <div className="coast-auth-card w-full max-w-md rounded-2xl border border-border bg-card p-8 shadow-xl">
           <div className="mb-6 flex rounded-lg bg-muted p-1">
             {(
               [
@@ -79,7 +79,10 @@ export function AuthPage({ mode }: { mode: "signin" | "signup" }) {
 
           <form onSubmit={onSubmit} className="mt-6 space-y-4">
             <div>
-              <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-card-foreground">
+              <label
+                htmlFor="email"
+                className="mb-1.5 block text-sm font-medium text-card-foreground"
+              >
                 Email
               </label>
               <input
@@ -94,7 +97,10 @@ export function AuthPage({ mode }: { mode: "signin" | "signup" }) {
               />
             </div>
             <div>
-              <label htmlFor="password" className="mb-1.5 block text-sm font-medium text-card-foreground">
+              <label
+                htmlFor="password"
+                className="mb-1.5 block text-sm font-medium text-card-foreground"
+              >
                 Password
               </label>
               <input
@@ -121,11 +127,7 @@ export function AuthPage({ mode }: { mode: "signin" | "signup" }) {
               disabled={loading}
               className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 disabled:opacity-60 card-glow"
             >
-              {loading
-                ? "…"
-                : mode === "signin"
-                  ? "Sign In / 登入"
-                  : "Sign Up / 註冊"}
+              {loading ? "…" : mode === "signin" ? "Sign In / 登入" : "Sign Up / 註冊"}
             </button>
           </form>
         </div>

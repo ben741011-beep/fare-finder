@@ -32,37 +32,37 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.75rem;
-  /* Flight Price Notifier — dark, violet accent */
-  --background: oklch(0.13 0.015 285);
-  --foreground: oklch(0.96 0.01 290);
-  --card: oklch(0.17 0.02 285);
-  --card-foreground: oklch(0.96 0.01 290);
-  --popover: oklch(0.17 0.02 285);
-  --popover-foreground: oklch(0.96 0.01 290);
-  --primary: oklch(0.6 0.22 292);
-  --primary-foreground: oklch(0.98 0.005 290);
-  --secondary: oklch(0.22 0.03 288);
-  --secondary-foreground: oklch(0.96 0.01 290);
-  --muted: oklch(0.22 0.03 288);
-  --muted-foreground: oklch(0.68 0.03 290);
-  --accent: oklch(0.25 0.05 292);
-  --accent-foreground: oklch(0.96 0.01 290);
-  --destructive: oklch(0.62 0.2 25);
-  --destructive-foreground: oklch(0.98 0.005 290);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.6 0.22 292);
+  --radius: 0.9rem;
+  /* Sea-glass shadows and the warm coral light from the reference photograph. */
+  --background: #101c1d;
+  --foreground: #f7f0e5;
+  --card: #1b2a2a;
+  --card-foreground: #f7f0e5;
+  --popover: #1b2a2a;
+  --popover-foreground: #f7f0e5;
+  --primary: #f69364;
+  --primary-foreground: #182324;
+  --secondary: #263636;
+  --secondary-foreground: #f7f0e5;
+  --muted: #263636;
+  --muted-foreground: #b6bfba;
+  --accent: #34403c;
+  --accent-foreground: #f7f0e5;
+  --destructive: #ec7769;
+  --destructive-foreground: #182324;
+  --border: rgb(244 223 201 / 16%);
+  --input: rgb(244 223 201 / 24%);
+  --ring: #f69364;
 
-  --glow-primary: 0 0 60px -12px oklch(0.6 0.22 292 / 45%);
+  --glow-primary: 0 18px 48px -18px rgb(246 147 100 / 40%);
   --gradient-hero: radial-gradient(
-    ellipse 80% 60% at 50% -10%,
-    oklch(0.6 0.22 292 / 22%),
-    transparent 70%
+    ellipse 75% 70% at 50% 10%,
+    rgb(246 147 100 / 14%),
+    transparent 72%
   );
 }
 
@@ -103,4 +103,125 @@
 
 @utility card-glow {
   box-shadow: var(--glow-primary);
+}
+
+.coast-page {
+  background:
+    radial-gradient(ellipse 65% 24% at 79% 26%, rgb(190 99 57 / 9%), transparent 80%),
+    var(--background);
+}
+
+.coast-header {
+  border-color: rgb(244 223 201 / 11%);
+  background: rgb(16 28 29 / 88%);
+}
+
+.coast-wordmark {
+  letter-spacing: -0.035em;
+}
+
+.coast-hero {
+  background:
+    radial-gradient(ellipse 60% 65% at 75% 48%, rgb(230 113 62 / 11%), transparent 80%),
+    linear-gradient(180deg, rgb(28 45 44 / 40%), transparent 70%);
+}
+
+.coast-eyebrow {
+  text-transform: uppercase;
+}
+
+.coast-eyebrow-line {
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.coast-display {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.coast-photo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.06;
+  overflow: hidden;
+  border: 1px solid rgb(255 190 144 / 19%);
+  border-radius: 1.6rem;
+  background: #263232;
+  box-shadow: 0 35px 100px -40px rgb(0 0 0 / 78%);
+}
+
+.coast-photo-frame::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, transparent 62%, rgb(15 28 28 / 16%));
+  content: "";
+  pointer-events: none;
+}
+
+.coast-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.055);
+}
+
+.coast-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 55px -18px rgb(246 147 100 / 52%);
+}
+
+.coast-features {
+  border-top: 1px solid rgb(244 223 201 / 12%);
+}
+
+.coast-feature-card {
+  background: linear-gradient(145deg, rgb(38 53 51 / 90%), rgb(27 42 42 / 94%));
+  box-shadow: 0 20px 60px -45px rgb(0 0 0 / 90%);
+}
+
+.coast-footer {
+  background: rgb(8 17 18 / 38%);
+}
+
+.coast-auth {
+  background-image:
+    linear-gradient(90deg, rgb(16 28 29 / 85%), rgb(16 28 29 / 73%)), url("/sunset-coast.png");
+  background-position:
+    center,
+    center 45%;
+  background-size: cover;
+}
+
+.coast-auth-card {
+  background: rgb(27 42 42 / 94%);
+  box-shadow: 0 35px 100px -35px rgb(0 0 0 / 82%);
+  backdrop-filter: blur(18px);
+}
+
+.coast-dashboard {
+  background:
+    radial-gradient(ellipse 65% 55% at 85% 4%, rgb(246 147 100 / 12%), transparent 72%),
+    var(--background);
+}
+
+@media (max-width: 1023px) {
+  .coast-photo-frame {
+    max-height: 34rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .coast-photo-frame {
+    aspect-ratio: 1.2;
+    border-radius: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coast-button:hover {
+    transform: none;
+  }
 }

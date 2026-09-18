@@ -23,9 +23,9 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link to="/" className="text-lg font-bold tracking-tight">
+    <header className="coast-header sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <Link to="/" className="coast-wordmark text-lg font-bold tracking-tight">
           Flight Price <span className="text-primary">Notifier</span>
         </Link>
         <div className="flex items-center gap-3">
@@ -36,7 +36,7 @@ export function SiteHeader() {
               </span>
               <button
                 onClick={signOut}
-                className="rounded-lg border border-border bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground transition-colors hover:bg-accent"
+                className="rounded-full border border-border bg-secondary px-5 py-2.5 text-sm font-medium text-secondary-foreground transition-colors hover:bg-accent"
               >
                 Sign Out / 登出
               </button>
@@ -44,7 +44,7 @@ export function SiteHeader() {
           ) : (
             <Link
               to="/sign-in"
-              className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:brightness-110 card-glow"
+              className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:brightness-110 card-glow"
             >
               Sign in / 登入
             </Link>

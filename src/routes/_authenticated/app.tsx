@@ -10,19 +10,16 @@ export function AppShell() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background hero-glow">
+    <div className="coast-dashboard min-h-screen bg-background">
       <SiteHeader />
       <main className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
-        <h1 className="text-3xl font-bold tracking-tight">
-          Hi {email ?? "…"}
-        </h1>
+        <h1 className="coast-display text-3xl tracking-tight">Hi {email ?? "…"}</h1>
         <div className="mt-8 rounded-2xl border border-dashed border-primary/40 bg-card p-10 text-center">
           <p className="text-lg font-medium text-card-foreground">
             你的航線追蹤儀表板即將上線 — 下一個里程碑會加上訂閱航線的功能。
           </p>
           <p className="mt-3 text-sm text-muted-foreground">
-            Your dashboard is coming soon. Route-subscription will be added in
-            the next milestone.
+            Your dashboard is coming soon. Route-subscription will be added in the next milestone.
           </p>
         </div>
       </main>
