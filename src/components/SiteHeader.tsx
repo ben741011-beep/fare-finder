@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate } from "react-router";
 import { supabase } from "@/integrations/supabase/client";
 import type { User } from "@supabase/supabase-js";
 
@@ -19,7 +19,7 @@ export function SiteHeader() {
 
   const signOut = async () => {
     await supabase.auth.signOut();
-    navigate({ to: "/" });
+    navigate("/");
   };
 
   return (
@@ -43,7 +43,7 @@ export function SiteHeader() {
             </>
           ) : (
             <Link
-              to="/auth"
+              to="/sign-in"
               className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:brightness-110 card-glow"
             >
               Sign in / 登入

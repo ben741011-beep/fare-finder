@@ -1,29 +1,8 @@
 import { useState, type FormEvent } from "react";
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate } from "react-router";
 import { supabase } from "@/integrations/supabase/client";
 
-export const Route = createFileRoute("/auth")({
-  head: () => ({
-    meta: [
-      { title: "Sign in — Flight Price Notifier" },
-      {
-        name: "description",
-        content: "Sign in or create your Flight Price Notifier account.",
-      },
-      { property: "og:title", content: "Sign in — Flight Price Notifier" },
-      {
-        property: "og:description",
-        content: "Sign in or create your Flight Price Notifier account.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-    ],
-  }),
-  component: AuthPage,
-});
-
-function AuthPage() {
-  const [mode, setMode] = useState<"signin" | "signup">("signin");
+export function AuthPage({ mode }: { mode: "signin" | "signup" }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -46,7 +25,7 @@ function AuthPage() {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
       }
-      navigate({ to: "/app" });
+      navigate("/app");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
@@ -75,7 +54,7 @@ function AuthPage() {
                 key={tab.id}
                 type="button"
                 onClick={() => {
-                  setMode(tab.id);
+                  navigate(tab.id === "signin" ? "/sign-in" : "/sign-up");
                   setError(null);
                 }}
                 className={`flex-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${

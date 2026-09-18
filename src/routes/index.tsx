@@ -1,29 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router";
 import { Plane, Bell, Bird } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Reveal } from "@/components/Reveal";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Flight Price Notifier — 機票降價通知" },
-      {
-        name: "description",
-        content:
-          "設定航線與目標價，機票降價就通知你。Set a route and a target price — we email you when the fare drops.",
-      },
-      { property: "og:title", content: "Flight Price Notifier — 機票降價通知" },
-      {
-        property: "og:description",
-        content:
-          "設定航線與目標價，機票降價就通知你。Set a route and a target price — we email you when the fare drops.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Landing,
-});
 
 const features = [
   {
@@ -46,7 +24,7 @@ const features = [
   },
 ];
 
-function Landing() {
+export function Landing() {
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -73,7 +51,7 @@ function Landing() {
           <Reveal delay={240}>
             <div className="mt-10">
               <Link
-                to="/auth"
+                to="/sign-in"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-3.5 text-base font-semibold text-primary-foreground transition-all hover:brightness-110 card-glow"
               >
                 Sign in / 登入
